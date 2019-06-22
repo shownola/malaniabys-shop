@@ -1,0 +1,9 @@
+<div class="container image-container">
+  <h1>List of Products</h1>
+    <% @products.each do |product| %>
+      <ul>
+        <li><%= product.title %></li>
+        <li><%= product.image %></li>
+      </ul>
+      <% end %>
+</div>

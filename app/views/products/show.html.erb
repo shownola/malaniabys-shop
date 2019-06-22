@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="show-container">
+    <div class="main_content">
+      <div class="row">
+        <div class="col-md-5">
+          <%= image_tag(@product.image.url, size: '400x400') if @product.image? %>
+        </div>
+        <div class="col-md-7 col-md-offset-1">
+          <div class="bg-show">
+            <h1>
+              <%= @product.title %>
+            </h1>
+
+            <%# <h4>Quantity</h4>
+            <%= button_to 'Add to Cart', line_items_path(product.id: @product), class: 'btn btn-success' %> %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

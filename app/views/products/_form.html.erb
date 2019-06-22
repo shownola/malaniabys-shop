@@ -1,0 +1,14 @@
+<%= simple_form_for @product, html: {multipart: true} do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title, wrapper_html: {class: 'productName'} %>
+  <%= f.input :description, wrapper_html: {class: 'productDescription'} %>
+  <%= f.input :image, as: :file, wrapper_html: {class: 'inputImage'} %>
+  <div class="row">
+    <%= f.input :sku, wrapper_html: {class: 'skuInput'} %>
+    <%= f.input :price, wrapper_html: {class: 'priceInput'} %>
+    <%= f.input :cost, wrapper_html: {class: 'costInput'} %>
+  </div>
+
+  <%= f.button :submit, class: 'btn btn-success' %>
+
+<% end %>
