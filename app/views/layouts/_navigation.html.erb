@@ -42,9 +42,12 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
+
         <li class="nav-item">
           <%= link_to 'Products', products_path, class: 'nav-link' %>
-
+        </li>
+        <li class="nav-item">
+          <%= link_to "#{current_order.order_items.size} Items in Cart (#{number_to_currency current_order.subtotal})", cart_path %> 
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

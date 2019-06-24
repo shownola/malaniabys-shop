@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_21_184342) do
+ActiveRecord::Schema.define(version: 2019_06_24_203432) do
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.decimal "unit_price", precision: 15, scale: 2
+    t.integer "quantity"
+    t.decimal "total_price", precision: 15, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "subtotal", precision: 15, scale: 2
+    t.decimal "tax", precision: 15, scale: 2
+    t.decimal "shipping", precision: 15, scale: 2
+    t.decimal "total", precision: 15, scale: 2
+    t.integer "order_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "title", null: false
@@ -22,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_06_21_184342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|

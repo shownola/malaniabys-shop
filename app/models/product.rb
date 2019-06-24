@@ -5,6 +5,9 @@ class Product < ApplicationRecord
    # serialize :image
 
    belongs_to :user, optional: true
+   has_many :order_items
+
+   default_scope { where(active: true) }
 
    validates :title, :sku, :price, :cost, presence: true
    validates :description, length: { maximum: 1000, too_long: "%{count} characters allowed" }

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # get 'orderitems/create'
+  # get 'orderitems/update'
+  # get 'orderitems/destroy'
+  # get 'carts/show'
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
@@ -8,4 +12,6 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :products
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
 end
