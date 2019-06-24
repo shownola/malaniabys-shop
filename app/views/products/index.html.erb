@@ -1,9 +1,28 @@
-<div class="container image-container">
-  <h1>List of Products</h1>
-    <% @products.each do |product| %>
-      <ul>
-        <li><%= product.title %></li>
-        <li><%= product.image %></li>
-      </ul>
-      <% end %>
+<div class="container-fluid">
+  <div class="display-3 text-center">List of Products</div>
+  <div class="container image-container">
+    <% @products.each_slice(4) do |products| %>
+      <div class="row">
+        <% @products.each do |product| %>
+          <div class="col-md-3">
+            <div class="product">
+              <div class="image_wrapper">
+                <%= link_to product do %>
+                  <%= image_tag(product.image.url, size: '200x200') if product.image? %>
+                <% end %>
+              </div>
+              <div class="row d-flex">
+                <h4 text-center>
+                  <%= link_to truncate(product.title, length: 20), product, class: 'title-link' %>
+                </h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+
 </div>

@@ -1,0 +1,35 @@
+$darkest-green: #37554E;
+$light-slate: #92AFAC;
+$very-light-slate: #CBD3D2;
+$dark-green: #6E8C87;
+$brown: #5A574E;
+$green: #87C9BB;
+
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+
+
+.jumbotron {
+  height: 85vh;
+  background-image:  linear-gradient(
+						to right bottom,
+						rgba($very-light-slate,0.6),
+            rgba($light-slate, 0.6),
+						rgba($green,0.6)),
+						url('greenDoor1.jpg');
+            background-size: cover;
+            background-position: top;
+            position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+          	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+            margin-top: 20px;
+}
+
+// .btn-success {
+//   @include button-variant($green);
+// }
+.btn-success {
+  background-color: $light-slate !important;
+}
+.btn-warning {
+  background-color: $very-light-slate !important;
+}

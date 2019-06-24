@@ -1,9 +1,12 @@
+
 <div class="container">
   <div class="display-3 text-center">
     Add New Product
   </div>
 
-  <%= render 'form' %>
+
+
+  <%= render 'form', product: @product %>
 
   <%= link_to 'Back', products_path %>
 </div>
