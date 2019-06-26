@@ -44,8 +44,18 @@
         </li>
         <li class="nav-item">
           <%= link_to 'Products', products_path, class: 'nav-link' %>
-
         </li>
+      <% if cart_has_items %>
+        <li class='nav-item'>
+          <%= link_to cart_path(@cart), class: 'nav-link' do %>
+            <span class="icon is-small">
+              <i class="fa fa-shopping-cart"></i>
+            </span> Cart
+            <%= cart_count_over_one %>
+          <% end %>
+        </li>
+      <% end %>
+
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

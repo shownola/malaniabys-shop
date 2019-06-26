@@ -1,4 +1,102 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="container">
+
+<div class="keep-shopping pv1 mt4 text-right">
+  <%= link_to 'Keep Shopping', products_path, class: 'button is-warning' %>
+</div>
+<hr />
+<section class="section">
+  <%= render(@cart.line_items) %>
+
+  <div class="columns">
+    <div class="column">
+      <div class="row button-g">
+      <%= link_to 'Keep Shopping', products_path, class: 'button btn-warning pr-3' %>
+      <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button btn-danger pr-3" %>
+      <%= button_to 'Checkout', "#", class: "button btn-success pr-3" %>
+    </div>
+
+
+  </div>
+  </div>
+</section>
+
+    <div class="column total d-flex justify-content-end text-right">
+      <h5 class="title col-md-4">
+        <span class="">Subtotal:</span> <%= number_to_currency(@cart.total_price) %>
+      </h5>
+    </div>
+
+    <div class="column total d-flex justify-content-end text-right">
+      <h5 class="title col-md-4">
+        <span class="">Shipping:</span> <%= number_to_currency(@cart.shipping) %>
+      </h5>
+    </div>
+
+    <div class="column total d-flex justify-content-end text-right">
+      <h4 class="title col-md-4">
+        <span class="">Subtotal:</span> <%= number_to_currency(@cart.final_price) %>
+      </h4>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container">
+
+  <hr>
+
+  <section class="section">
+    <%= render(@cart.line_items) %>
+
+
+
+    <div class="columns">
+      <div class="column">
+        <div class="row button-g">
+          <%= link_to 'Keep Shopping', products_path, class: 'btn btn-warning float-right' %>
+          <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: 'are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+
+        </section>
+
+      <div class="column float-right">
+        <h5 class="title col-md-5">
+          <span>Subtotal: </span><%= number_to_currency(@cart.total_price) %>
+        </h5>
+
+        <h5 class="title col-md-5">
+          <span>Shipping: </span><%= number_to_currency(@cart.shipping) %>
+        </h5>
+
+        <h5 class="title col-md-5">
+          <span>Total: </span><%= number_to_currency(@cart.final_price) %>
+        </h5>
+
+      </div>
+
+      <!-- <div class="column float-right">
+        <h4 class="title col-md-4">
+          <span>Shipping: </span><%= number_to_currency(@cart.shipping) %>
+        </h4>
+      </div>
+
+      <div class="column float-right">
+        <h4 class="title col-md-4">
+          <span>Total: </span><%= number_to_currency(@cart.final_price) %>
+        </h4>
+      </div> -->
+    </div>
+
+</div>
+
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
+
+<!-- <div class="keep-shopping float-right">
+  <%= link_to 'Keep Shopping', products_path, class: 'btn btn-warning' %>
+</div> --> -->
