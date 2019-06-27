@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+      resources :users
+      resources :carts
+      resources :line_items
+      resources :products
+      resources :admin_users
+
+      root to: "users#index"
+    end
   resources :line_items
   resources :carts
   devise_for :users, controllers: {

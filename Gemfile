@@ -44,6 +44,11 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'gritter', '1.2.0'
+gem 'administrate'
+gem 'bourbon'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
