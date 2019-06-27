@@ -16,5 +16,7 @@
 
     <%# <%= yield(:header) %>
     <%= yield %>
+
+    <%= js add_gritter(flash[:notice], title: 'Malaniabys Notification', sticky: false, time: 3000, image: :notice) %>
   </body>
 </html>

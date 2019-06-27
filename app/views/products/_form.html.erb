@@ -1,5 +1,12 @@
 <%= simple_form_for @product, html: {multipart: true} do |f| %>
-  <%= f.error_notification %>
+
+
+  <% if @product.errors.any? %>
+    <% @product.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: 'Malaniabys Notification', sticky: false) %>
+    <% end %>
+  <% end %>
+
   <%= f.input :title, wrapper_html: {class: 'productName'} %>
   <%= f.input :description, wrapper_html: {class: 'productDescription'} %>
   <%= f.input :image, as: :file, wrapper_html: {class: 'inputImage'} %>

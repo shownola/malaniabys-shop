@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       flash[:success] = 'You have successfully created product'
       redirect_to product_path(@product)
     else
-      render new
+      render :new
     end
   end
 
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product)
     else
       flash[:danger] = 'There was an error, please try again'
-      render edit
+      render :edit
     end
   end
 

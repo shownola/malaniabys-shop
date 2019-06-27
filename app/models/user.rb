@@ -4,5 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :products 
+  has_many :products
+
+  def full_name
+    last_name.upcase + ", " + first_name.upcase
+  end
+  
 end
