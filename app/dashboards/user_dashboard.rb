@@ -11,6 +11,7 @@ class UserDashboard < Administrate::BaseDashboard
     products: Field::HasMany,
     id: Field::Number,
     email: Field::String,
+    password: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -43,6 +44,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :encrypted_password,
+    :type
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -51,8 +53,8 @@ class UserDashboard < Administrate::BaseDashboard
     :products,
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
+    # :encrypted_password,
+    # :reset_password_token,
     :reset_password_sent_at,
     :remember_created_at,
     :sign_in_count,
@@ -77,12 +79,13 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :products,
+    # :products,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
+    :password,
+    # :encrypted_password,
+    # :reset_password_token,
+    # :reset_password_sent_at,
+    # :remember_created_at,
     :sign_in_count,
     :current_sign_in_at,
     :last_sign_in_at,
