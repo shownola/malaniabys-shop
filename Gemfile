@@ -47,6 +47,8 @@ gem 'gritter', '1.2.0'
 gem 'administrate'
 gem 'bourbon'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'stripe'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 
 
