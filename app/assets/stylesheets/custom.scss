@@ -4,6 +4,15 @@ $very-light-slate: #CBD3D2;
 $dark-green: #6E8C87;
 $brown: #5A574E;
 $green: #87C9BB;
+$base: #47BDA5;
+
+
+@mixin box-shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
 
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
 
@@ -12,9 +21,9 @@ $green: #87C9BB;
   height: 85vh;
   background-image:  linear-gradient(
 						to right bottom,
-						rgba($very-light-slate,0.6),
-            rgba($light-slate, 0.6),
-						rgba($green,0.6)),
+						rgba($very-light-slate,0.3),
+            rgba($light-slate, 0.3),
+						rgba($green,0.3)),
 						url('greenDoor1.jpg');
             background-size: cover;
             background-position: top;
@@ -51,3 +60,184 @@ $green: #87C9BB;
 .dropdown {text-align:center;}
 .button, .dropdown-menu {margin:10px auto}
 .dropdown-menu {width:200px; left:50%; margin-left:-100px;}
+
+.display-white {
+  color: #fff;
+}
+.nav-link {
+  font-size: 1.2em;
+  color: #fff;
+
+  &:hover {
+    background:$dark-green;
+    color: $light-slate;
+    text-decoration: underline;
+  }
+}
+#logo {
+  font-family: 'Great Vibes', cursive;
+	padding-right: 10px;
+  font-size: 2.3em;
+  color: #fff;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150,1);
+  &:hover {
+    background: $light-slate;
+    text-decoration: none;
+    color: $very-light-slate;
+  }
+}
+
+.feature-cards {
+  color: $dark-green;
+  text-shadow: 3px 3px 3px $dark-green;
+  margin-bottom: 70px;
+}
+
+
+/* entire container, keeps perspective */
+.flip-container {
+  -webkit-perspective: 1000;
+  background: #ccc;
+  margin: 100px auto;
+}
+
+/* flip the pane when clicked */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  -webkit-transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  background: yellow;
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY(180deg);
+  background: brown;
+}
+
+.card-deck {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 40px;
+    // background-image: linear-gradient(
+    //                   to right top, #37554e, #92afac, #cbd3d2, #6e8c87, #5a574e);
+    background-image: linear-gradient(
+                    to right top, #47BDA5, #92afac, #cbd3d2, #6e8c87, #47BDA5);
+    height: 400px;
+
+
+    -webkit-clip-path: polygon(0 49%, 100% 13%, 100% 99%, 0% 100%);
+    clip-path: polygon(0 49%, 100% 13%, 100% 99%, 0% 100%);
+}
+
+
+.footer {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 160px;
+    color: #fff;
+}
+
+#bg-show {
+    background: #f8f8f8;
+     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    // -webkit-box-shadow: 0 10px 6px -6px #777;
+    // -moz-box-shadow: 0 10px 6px -6px #777;
+    // box-shadow: 0 10px 6px -6px #777;
+    padding: 8px 8px 8px 8px;
+    font-size: 1.4rem;
+}
+
+.product {
+	background: white;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+	.image_wrapper {
+		max-width: 100%;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+	}
+	img {
+		width: 100%;
+		-webkit-transition: all .3s ease-out;
+	  -moz-transition: all .3s ease-out;
+	  -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
+	}
+	h2 {
+		padding: 15px 5%;
+		margin: 0;
+		font-size: 20px;
+		font-weight: normal;
+		line-height: 1.5;
+		a {
+			color: $darkest-green;
+		}
+	}
+}
+
+.title-link {
+  font-size: 16px;
+	padding-right: 5px;
+  color: $light-slate;
+  &:hover {
+    color: $darkest-green;
+  }
+}
+
+.index-price {
+    font-weight: 500;
+    font-size: 18px;
+    color: $light-slate;
+}
+.price {
+    color: $light-slate;
+    font-size: 14px;
+}
+.description {
+    font-size: .9rem;
+    color: $very-light-slate;
+}
+.display-3 {
+  color: $light-slate;
+}
+.display-2 {
+  color: $base;
+}
+
+.container-fluid .show-container {
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-right: 100px;
+}

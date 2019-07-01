@@ -3,10 +3,10 @@
     <div class="main_content">
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-md-5 pt-5">
-          <%= image_tag(@product.image.url, size: '400x400') if @product.image? %>
+          <%= image_tag(@product.image.url, size: '400x500') if @product.image? %>
         </div>
         <div class="col-md-7 col-md-offset-1">
-          <div class="bg-show">
+          <div id="bg-show">
             <h1>
               <%= @product.title %>
             </h1>
