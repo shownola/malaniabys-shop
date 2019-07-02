@@ -43,6 +43,9 @@
           </div>
         </li>
         <li class="nav-item">
+          <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
           <%= link_to 'Products', products_path, class: 'nav-link' %>
         </li>
       <% if cart_has_items %>
@@ -55,6 +58,8 @@
           <% end %>
         </li>
       <% end %>
+
+
 
       </ul>
       <form class="form-inline my-2 my-lg-0">

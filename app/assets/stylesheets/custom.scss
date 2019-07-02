@@ -65,9 +65,9 @@ $base: #47BDA5;
   color: #fff;
 }
 .nav-link {
-  font-size: 1.2em;
-  color: #fff;
-
+  font-size: 1.3em;
+  color: #fff !important;
+	
   &:hover {
     background:$dark-green;
     color: $light-slate;
@@ -240,4 +240,8 @@ footer {
   margin-top: 30px;
   margin-left: 150px;
   margin-right: 100px;
+}
+
+#email {
+	color: $light-slate;
 }
