@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :line_items
       resources :products
       resources :admin_users
+      resources :suppliers
 
       root to: "users#index"
     end
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
 
   resources :products
+  resources :suppliers
 end

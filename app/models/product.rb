@@ -6,6 +6,8 @@ class Product < ApplicationRecord
 
    belongs_to :user, optional: true
    has_many :line_items
+   belongs_to :supplier
+   accepts_nested_attributes_for :suppliers
 
    validates :title, :sku, :price, :cost, presence: true
    validates :description, length: { maximum: 1000, too_long: "%{count} characters allowed" }

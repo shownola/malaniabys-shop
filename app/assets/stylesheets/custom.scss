@@ -67,7 +67,7 @@ $base: #47BDA5;
 .nav-link {
   font-size: 1.3em;
   color: #fff !important;
-	
+
   &:hover {
     background:$dark-green;
     color: $light-slate;
@@ -244,4 +244,14 @@ footer {
 
 #email {
 	color: $light-slate;
+}
+
+.supply-info {
+	padding-left: 30px;
+}
+.supply-content {
+	align: center;
+}
+.display-5 {
+	font-size: 22px;
 }

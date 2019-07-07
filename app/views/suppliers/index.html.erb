@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="display-3 text-center">
+    List of Suppliers
+  </div>
+
+  <div class="display-5 text-center">
+    <% @suppliers.each do |supplier| %>
+        <%= link_to supplier.company_name, supplier_path(supplier) %>
+    <% end %>
+
+  </div>
+</div>

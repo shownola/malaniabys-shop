@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="display-3 text-center">
+    Supplier
+
+
+  <div class="display-4 supply-content">
+    <div class="col-md-12 text-center">
+      <div class="row">
+        <h6>Company Name: </h6>
+          <h4 class="supply-info"><%= @supplier.company_name %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row text-center">
+        <h6>Contact Name: </h6>
+          <h4 class="supply-info"><%= @supplier.contact_name %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Contact Title: </h6>
+          <h4 class="supply-info"><%= @supplier.contact_title %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Address: </h6>
+          <h4 class="supply-info"><%= @supplier.address %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>City: </h6>
+          <h4 class="supply-info"><%= @supplier.city %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>State: </h6>
+          <h4 class="supply-info"><%= @supplier.state %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Postal Code: </h6>
+          <h4 class="supply-info"><%= @supplier.postal_code %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Country: </h6>
+          <h4 class="supply-info"><%= @supplier.country %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Phone: </h6>
+          <h4 class="supply-info"><%= @supplier.phone %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Fax: </h6>
+          <h4 class="supply-info"><%= @supplier.fax %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Other Phone: </h6>
+          <h4 class="supply-info"><%= @supplier.phone_other %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Email: </h6>
+          <h4 class="supply-info"><%= @supplier.email %></h4>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <h6>Website </h6>
+          <h4 class="supply-info"><%= @supplier.url %></h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="text-center display-4">
+    Products
+  </div>
+  <div class="supplier-container">
+    <div align="center">
+      <% @suppliers.each do %>
+      <ul class="listing">
+        <div class="row">
+          <li><%= link_to pluralize(supplier.products.count, 'product') if supplier.prodocts %></li>
+        </div>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+  <div align="center">
+    <% @suppliers.each do %>
+
+    <% end %>
+  </div>
+
+</div>

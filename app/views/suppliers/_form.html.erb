@@ -1,0 +1,29 @@
+<%= simple_form_for @supplier, html: {multipart: true} do |f| %>
+
+
+  <% if @supplier.errors.any? %>
+    <% @supplier.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: 'Malaniabys Notification', sticky: false) %>
+    <% end %>
+  <% end %>
+
+  <%= f.input :company_name, wrapper_html: {class: 'companyName'} %>
+  <%= f.input :contact_name, wrapper_html: {class: 'contactName'} %>
+  <%= f.input :contact_title, wrapper_html: {class: 'contactTitle'} %>
+  <%= f.input :address, wrapper_html: {class: 'addressInput'} %>
+  <%= f.input :city, wrapper_html: {class: 'cityInput'} %>
+  <%= f.input :state, wrapper_html: {class: 'stateInput'} %>
+  <%= f.input :postal_code, wrapper_html: {class: 'postalCode'} %>
+  <%= f.input :country, as: :text, wrapper_html: {class: 'countryInput'} %>
+  <%= f.input :phone, wrapper_html: {class: 'phoneInput'} %>
+  <%= f.input :fax, wrapper_html: {class: 'faxInput'} %>
+  <%= f.input :phone_other, wrapper_html: {class: 'otherPhoneInput'} %>
+  <%= f.input :email, wrapper_html: {class: 'emailInput'} %>
+  <%= f.input :url, wrapper_html: {class: 'urlInput'} %>
+
+
+
+  <%= f.button :submit, class: 'btn btn-success' %>
+  <%= link_to 'Cancel', suppliers_path, class: 'btn btn-warning' %>
+
+<% end %>

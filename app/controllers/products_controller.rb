@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     # @product = current_user.products.build(product_params)
+    
     if @product.save
       flash[:success] = 'You have successfully created product'
       redirect_to product_path(@product)
