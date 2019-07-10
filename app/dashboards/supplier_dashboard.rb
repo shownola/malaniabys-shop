@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProductDashboard < Administrate::BaseDashboard
+class SupplierDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,16 +8,21 @@ class ProductDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
-    line_items: Field::HasMany,
-    supplier: Field::BelongsTo,
+    products: Field::HasMany,
     id: Field::Number,
-    title: Field::String,
-    description: Field::Text,
-    image: Field::String,
-    price: Field::String.with_options(searchable: false),
-    cost: Field::String.with_options(searchable: false),
-    sku: Field::String,
+    company_name: Field::String,
+    contact_name: Field::String,
+    contact_title: Field::String,
+    address: Field::String,
+    city: Field::String,
+    state: Field::String,
+    postal_code: Field::Number,
+    country: Field::String,
+    phone: Field::String,
+    fax: Field::String,
+    phone_other: Field::String,
+    email: Field::String,
+    url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -28,26 +33,30 @@ class ProductDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-  #  :user,
-    :title,
-    :line_items,
-    :supplier,
+    :products,
     :id,
+    :company_name,
+    :contact_name,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :user,
-    :line_items,
-    :supplier,
+    :products,
     :id,
-    :title,
-    :description,
-    :image,
-    :price,
-    :cost,
-    :sku,
+    :company_name,
+    :contact_name,
+    :contact_title,
+    :address,
+    :city,
+    :state,
+    :postal_code,
+    :country,
+    :phone,
+    :fax,
+    :phone_other,
+    :email,
+    :url,
     :created_at,
     :updated_at,
   ].freeze
@@ -56,21 +65,26 @@ class ProductDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :user,
-    :line_items,
-    :supplier,
-    :title,
-    :description,
-    :image,
-    :price,
-    :cost,
-    :sku,
+    :products,
+    :company_name,
+    :contact_name,
+    :contact_title,
+    :address,
+    :city,
+    :state,
+    :postal_code,
+    :country,
+    :phone,
+    :fax,
+    :phone_other,
+    :email,
+    :url,
   ].freeze
 
-  # Overwrite this method to customize how products are displayed
+  # Overwrite this method to customize how suppliers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(product)
-  #   "Product ##{product.id}"
+  # def display_resource(supplier)
+  #   "Supplier ##{supplier.id}"
   # end
 end

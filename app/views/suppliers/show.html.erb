@@ -97,24 +97,5 @@
   </div>
 </div>
 
-  <div class="text-center display-4">
-    Products
-  </div>
-  <div class="supplier-container">
-    <div align="center">
-      <% @suppliers.each do %>
-      <ul class="listing">
-        <div class="row">
-          <li><%= link_to pluralize(supplier.products.count, 'product') if supplier.prodocts %></li>
-        </div>
-      </ul>
-      <% end %>
-    </div>
-  </div>
-  <div align="center">
-    <% @suppliers.each do %>
-
-    <% end %>
-  </div>
-
+  
 </div>

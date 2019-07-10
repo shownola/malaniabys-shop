@@ -4,18 +4,24 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.order('created_at desc')
+    # @suppliers = @supplier.find(params[:category_id])
   end
 
   def new
     @product = Product.new
+    # @suppliers = Supplier.where(supplier_id: @supplier.id)
+    ## @suppliers = Supplier.all
+    # @suppliers = Supplier.find(params[:id])
     # @product = current_user.product.build
   end
 
 
   def create
     @product = Product.new(product_params)
+    @product.supplier_id = params[:supplier_id]
+
     # @product = current_user.products.build(product_params)
-    
+
     if @product.save
       flash[:success] = 'You have successfully created product'
       redirect_to product_path(@product)
@@ -48,7 +54,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :image, :sku, :price, :cost)
+    params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, suppliers_attributes: [:company_name, :supplier_id])
   end
 
   def find_product
