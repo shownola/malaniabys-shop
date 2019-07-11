@@ -254,4 +254,16 @@ footer {
 }
 .display-5 {
 	font-size: 22px;
+	font-color: $very-light-slate;
+}
+
+.cat-list {
+	list-style-type: none;
+}
+li .display-5 {
+	color: $base;
+	padding-top: 20px;
+	&:hover {
+		color: $very-light-slate;
+	}
 }

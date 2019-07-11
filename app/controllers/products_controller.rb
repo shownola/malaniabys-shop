@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     # @suppliers = Supplier.where(supplier_id: @supplier.id)
-    ## @suppliers = Supplier.all
+    @suppliers = Supplier.all
+    @categories = Category.all 
     # @suppliers = Supplier.find(params[:id])
     # @product = current_user.product.build
   end
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.supplier_id = params[:supplier_id]
+    @product.category_id = params[:category_id]
 
     # @product = current_user.products.build(product_params)
 
@@ -51,11 +53,16 @@ class ProductsController < ApplicationController
     redirect_to products_path, notice: 'You have deleted this product'
   end
 
+
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, suppliers_attributes: [:company_name, :supplier_id])
+    params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, :supplier_id, :category_id)
   end
+
+  # def product_params
+  #   params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, suppliers_attributes: [:company_name, :supplier_id], categories_attributes: [:title, :category_id])
+  # end
 
   def find_product
     @product = Product.find(params[:id])

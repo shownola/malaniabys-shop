@@ -15,6 +15,7 @@
     <%= f.input :price, wrapper_html: {class: 'priceInput'} %>
     <%= f.input :cost, wrapper_html: {class: 'costInput'} %>
     <%= f.association :supplier, label_method: :company_name, value_method: :id, include_blank: false %>
+    <%= f.association :category, label_method: :title, value_method: :id, include_blank: false %>
   </div>
 
 
