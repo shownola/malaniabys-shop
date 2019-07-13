@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @suppliers = Supplier.all
     @categories = Category.all
     # @suppliers = Supplier.find(params[:id])
-    # @product = current_user.product.build
+
   end
 
 
@@ -56,13 +56,13 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, supplier_attributes: [:supplier_id, :company_name], category_attributes: [:category_id, :title])
-  end
-
   # def product_params
-  #   params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, suppliers_attributes: [:company_name, :supplier_id], categories_attributes: [:title, :category_id])
+  #   params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, supplier_attributes: [:id, :company_name], category_attributes: [:id, :title])
   # end
+
+  def product_params
+    params.require(:product).permit(:title, :description, :image, :sku, :price, :cost, suppliers_attributes: [:company_name, :supplier_id], categories_attributes: [:title, :category_id])
+  end
 
   def find_product
     @product = Product.find(params[:id])
