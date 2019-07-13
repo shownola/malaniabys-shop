@@ -42,20 +42,10 @@ $base: #47BDA5;
 .btn-warning {
   background-color: $very-light-slate !important;
 }
-//
-// .justify-content-center .dropdown-menu {
-//   left: 50%;
-//   transform: translateX(-40%);
-// }
+.btn-default {
+	color: $green !important;
+}
 
-// .dropdown-link {
-//   width: 100%;
-//   text-align: center;
-// }
-
-// ul.dropdown-menu>li {
-//     text-align: center;
-// }
 
 .dropdown {text-align:center;}
 .button, .dropdown-menu {margin:10px auto}
@@ -254,4 +244,17 @@ footer {
 }
 .display-5 {
 	font-size: 22px;
+	font-color: $very-light-slate;
+}
+
+.cat-list {
+	list-style-type: none;
+}
+li .display-5 {
+	color: $base;
+	padding-top: 20px;
+	list_style_type: none;
+	&:hover {
+		color: $very-light-slate;
+	}
 }

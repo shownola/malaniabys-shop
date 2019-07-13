@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="display-3 text-center">
+    Categories
+  </div>
+
+  <hr>
+
+  <div class="display-5">
+    <ul class="cat-list text-center">
+
+
+    <% @categories.each do |category| %>
+    <li>
+        <%= link_to category.title, category_path(category), class: 'display-5' %>
+    </li>
+    <% end %>
+
+    </ul>
+  </div>
+
+
+</div>

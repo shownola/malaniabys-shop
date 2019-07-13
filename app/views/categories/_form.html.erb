@@ -1,0 +1,17 @@
+
+  <div class="">
+    <%= simple_form_for @category, html: {multipart: true} do |f| %>
+      <% if @category.errors.any? %>
+        <% @category.errors.full_messages.each do |error| %>
+          <%= js add_gritter(error, title: 'Malaniabys Notification', sticky: false) %>
+      <% end %>
+    <% end %>
+
+    <%= f.input :title, wrapper_html: {class: 'CategoryTitle'} %>
+
+    <%= f.button :submit, class: 'btn btn-success' %>
+    <%= link_to 'Cancel', categories_path, class: 'btn btn-warning' %>
+
+  <% end %>
+  </div>
+</div>

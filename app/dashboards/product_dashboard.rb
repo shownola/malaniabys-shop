@@ -11,6 +11,7 @@ class ProductDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     line_items: Field::HasMany,
     supplier: Field::BelongsTo,
+    category: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
@@ -32,6 +33,7 @@ class ProductDashboard < Administrate::BaseDashboard
     :title,
     :line_items,
     :supplier,
+    :category,
     :id,
   ].freeze
 
@@ -41,6 +43,7 @@ class ProductDashboard < Administrate::BaseDashboard
     :user,
     :line_items,
     :supplier,
+    :category,
     :id,
     :title,
     :description,
@@ -59,6 +62,7 @@ class ProductDashboard < Administrate::BaseDashboard
     :user,
     :line_items,
     :supplier,
+    :category,
     :title,
     :description,
     :image,

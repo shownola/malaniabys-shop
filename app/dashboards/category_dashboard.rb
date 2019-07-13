@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SupplierDashboard < Administrate::BaseDashboard
+class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,19 +10,7 @@ class SupplierDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     products: Field::HasMany,
     id: Field::Number,
-    company_name: Field::String,
-    contact_name: Field::String,
-    contact_title: Field::String,
-    address: Field::String,
-    city: Field::String,
-    state: Field::String,
-    postal_code: Field::Number,
-    country: Field::String,
-    phone: Field::String,
-    fax: Field::String,
-    phone_other: Field::String,
-    email: Field::String,
-    url: Field::String,
+    title: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -35,8 +23,8 @@ class SupplierDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :products,
     :id,
-    :company_name,
-    :contact_name,
+    :title,
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -44,19 +32,7 @@ class SupplierDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :products,
     :id,
-    :company_name,
-    :contact_name,
-    :contact_title,
-    :address,
-    :city,
-    :state,
-    :postal_code,
-    :country,
-    :phone,
-    :fax,
-    :phone_other,
-    :email,
-    :url,
+    :title,
     :created_at,
     :updated_at,
   ].freeze
@@ -66,29 +42,13 @@ class SupplierDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :products,
-    :company_name,
-    :contact_name,
-    :contact_title,
-    :address,
-    :city,
-    :state,
-    :postal_code,
-    :country,
-    :phone,
-    :fax,
-    :phone_other,
-    :email,
-    :url,
+    :title,
   ].freeze
 
-  # Overwrite this method to customize how suppliers are displayed
+  # Overwrite this method to customize how categories are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(supplier)
-  #   "Supplier ##{supplier.id}"
-  # end
-
-  # def display_resource(supplier)
-  #   "supplier.company_name"
+  # def display_resource(category)
+  #   "Category ##{category.id}"
   # end
 end

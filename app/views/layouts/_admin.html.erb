@@ -1,0 +1,14 @@
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Admin
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item"><%= link_to 'Admin Dashboard', admin_root_path, class: 'dropdown-link pl-4' %> </a>
+    <a class="dropdown-item"><%= link_to 'New Product', new_product_path,class: 'dropdown-link pl-5' %></a>
+    <a class="dropdown-item"><%= link_to 'New Supplier', new_supplier_path,class: 'dropdown-link pl-5' %></a>
+    <a class="dropdown-item"><%= link_to 'New Category', new_category_path,class: 'dropdown-link pl-5' %></a>
+    <a class="dropdown-item"><%= link_to 'Supplier', suppliers_path, class: 'dropdown-link pl-5' %> </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</li>

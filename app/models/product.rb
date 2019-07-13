@@ -8,12 +8,17 @@ class Product < ApplicationRecord
    has_many :line_items
    belongs_to :supplier, optional: true
    accepts_nested_attributes_for :supplier
+   belongs_to :category, optional: true
+   accepts_nested_attributes_for :category
+
    # accepts_nested_attributes_for :suppliers, allow_destroy: true, reject_if: proc { |att| att['company_name'].blank? }
 
    validates :title, :sku, :price, :cost, presence: true
    validates :description, length: { maximum: 1000, too_long: "%{count} characters allowed" }
    validates :title, length: { maximum: 140, too_long: "%{count} characters allowed"}
    validates :price, numericality: {only_decimal: true}, length: { maximum: 7 }
+   # validates :supplier_id, :category_id, presence: true
+
 
 
    private
