@@ -45,20 +45,7 @@ $base: #47BDA5;
 .btn-default {
 	color: $green !important;
 }
-//
-// .justify-content-center .dropdown-menu {
-//   left: 50%;
-//   transform: translateX(-40%);
-// }
 
-// .dropdown-link {
-//   width: 100%;
-//   text-align: center;
-// }
-
-// ul.dropdown-menu>li {
-//     text-align: center;
-// }
 
 .dropdown {text-align:center;}
 .button, .dropdown-menu {margin:10px auto}
@@ -266,6 +253,7 @@ footer {
 li .display-5 {
 	color: $base;
 	padding-top: 20px;
+	list_style_type: none;
 	&:hover {
 		color: $very-light-slate;
 	}

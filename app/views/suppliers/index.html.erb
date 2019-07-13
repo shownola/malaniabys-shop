@@ -4,9 +4,14 @@
   </div>
 
   <div class="display-5 text-center">
-    <% @suppliers.each do |supplier| %>
-        <%= link_to supplier.company_name, supplier_path(supplier) %>
-    <% end %>
+    <ul class="cat-list">
+      <% @suppliers.each do |supplier| %>
+      <li>
+          <%= link_to supplier.company_name, supplier_path(supplier), class: 'display-5' %>
+      <% end %>
+      </li>
+    </ul>
+
 
   </div>
 </div>
