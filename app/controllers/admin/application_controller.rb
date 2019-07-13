@@ -11,18 +11,19 @@ module Admin
   end
 
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_admin
+    before_action :authenticate_user!
     before_action :authenticate_admin
 
 
 
 
     def authenticate_admin
-      unless Admin_types.include?(current_user.try(:type))
+      unless Admin.admin_types.include?(current_user.try(:type))
+      # unless Admin_types.include?(current_user.try(:type))
         # unless current_user.try(:type) == 'AdminUser'
         flash[:notice] = 'You are not authorized to access this page'
         redirect_to(root_path)
-      end 
+      end
     end
 
     # Override this value to specify the number of elements to display at a time

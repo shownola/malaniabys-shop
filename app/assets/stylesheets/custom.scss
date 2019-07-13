@@ -246,6 +246,12 @@ footer {
 	font-size: 22px;
 	font-color: $very-light-slate;
 }
+a#title {
+	color: $base;
+	&:hover {
+		color: $very-light-slate;
+	}
+}
 
 .cat-list {
 	list-style-type: none;
