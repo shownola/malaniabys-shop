@@ -16,6 +16,8 @@
                   <%= link_to truncate(product.title, length: 20), product, class: 'title-link pl-5' %>
                   <span class="text-right price"><%= number_to_currency(product.price) %></span>
                 </h4>
+                <span class="quiet text-center pl-4 created"><small>Created <%= time_ago_in_words(product.created_at) %> ago | <%= pluralize(product.comments.count, 'Comment') %></small></span>
+
               </div>
             </div>
           </div>

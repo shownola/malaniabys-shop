@@ -88,6 +88,10 @@ class SupplierDashboard < Administrate::BaseDashboard
   #   "Supplier ##{supplier.id}"
   # end
 
+  def display_resouce(supplier)
+    supplier.company_name
+  end
+
   # def display_resource(supplier)
   #   "supplier.company_name"
   # end

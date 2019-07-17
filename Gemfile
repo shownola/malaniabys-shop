@@ -47,7 +47,8 @@ gem 'gritter', '1.2.0'
 gem 'administrate'
 gem 'bourbon'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
-
+gem 'will_paginate', '~> 3.1.7'
+# gem 'bootstrap-will_paginate', '0.0.10'
 
 
 

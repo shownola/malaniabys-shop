@@ -10,6 +10,7 @@ class Product < ApplicationRecord
    accepts_nested_attributes_for :supplier
    belongs_to :category, optional: true
    accepts_nested_attributes_for :category
+   has_many :comments, dependent: :destroy
 
    # accepts_nested_attributes_for :suppliers, allow_destroy: true, reject_if: proc { |att| att['company_name'].blank? }
 

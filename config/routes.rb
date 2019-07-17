@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :admin_users
       resources :suppliers
       resources :categories
+      resources :comments
 
       root to: "users#index"
     end
@@ -23,7 +24,11 @@ Rails.application.routes.draw do
 
 
 
-  resources :products
+  resources :products do
+    resources :comments, only: [:create]
+  end
+
+
   resources :suppliers
   resources :categories
 
