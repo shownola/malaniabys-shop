@@ -17,6 +17,7 @@
 # .gitignore
 # Ignore environment variables
 .env
+/.env
 
 # Ignore uploaded files in development
 /storage/*

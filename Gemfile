@@ -7,6 +7,8 @@ ruby '2.6.3'
 gem 'rails', '~> 5.2.3'
 
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use postgresql as the database for Active Record
 # gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -43,6 +45,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
 gem 'gritter', '1.2.0'
 gem 'administrate'
 gem 'bourbon'
